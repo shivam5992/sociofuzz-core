@@ -1,0 +1,25 @@
+<ion-view view-title="Critics">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div ng-repeat="review in review_data">
+          <div class="card-item">
+              <div class="card stable-bg ink ink-dark">
+                  <div class="item-avatar item-text-wrap rv-row">
+                      <a ng-click="itemDetail('{{ review.link }}')">
+                      <div class="row">
+                        <div class="col-50">
+                          <span class="avatar" style="background-image: url('{{ review.newSrc }}');"></span>
+                          <font color="#222"><strong><font color="{{ review.color }}">{{ review.name }}</font></strong></font><br>
+                          <font color="#444">{{ review.source }}</font>
+                        </div>
+                        <div class="col-30 col-offset-20">
+                          <span class="critic-rating" style="background-color: {{ review.color }}">{{ review.rating }}</span>
+                        </div>
+                      </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+         </div>
+    </ion-content>
+</ion-view>
+

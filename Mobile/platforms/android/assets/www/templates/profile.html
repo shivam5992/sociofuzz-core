@@ -1,0 +1,64 @@
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+        <div class="hero">
+            <div class="content toped">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="movie-poster">
+                            <img src="http:{{ movie_data.poster }}" >
+                        </div>
+                    </div>
+                    <div class="col-70 col-offset-20">
+                        <div class="movie-details">
+                            <p class="movie-name">{{ movie_data.meta.wiki.name }}</p>
+                            <div class="row">
+                                <div class="col-40">
+                                    <span class="movie-rating"> {{ movie_data.rank }} </span>
+                                </div>
+                                <div class="stars">
+                                    <span class="movie-tag start-stars">
+                                        <div ng-bind-html="movie_data.stars[0]"></div>
+                                    </span>
+                                    <span class="movie-tag"><i>{{ movie_data.stars[1] }}</i></span>
+                                </div>
+                            </div>
+                            <div class="row stats">
+                              <div class="stat-box">{{ movie_data.analyzed.total_tweets }} tweets</div>
+                              <div class="stat-box">{{ movie_data.analyzed.total_users }} users</div>
+                              <div class="stat-box">{{ movie_data.reviews_data_len }} critics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs tabs-dark tabs-icon-top static">
+           <a ui-sref="app.about({ moviename : uname  })" class="tab-item">
+                <i class="icon ion-ios-list"></i> About
+            </a>
+            <a ui-sref="app.social({ moviename : uname  })" class="tab-item">
+                <i class="icon ion-ios-pie"></i> Social
+            </a>
+            <a ui-sref="app.critics({ moviename : uname  })" class="tab-item">
+                <i class="icon ion-ios-people"></i> Critics
+            </a>
+            <a ui-sref="app.trivias({ moviename : uname  })" class="tab-item">
+                <i class="icon ion-navicon-round"></i> Trivias
+            </a>
+            <a ui-sref="app.news({ moviename : uname  })" class="tab-item">
+                <i class="icon ion-arrow-graph-up-right"></i> News
+            </a>
+        </div>
+
+        <div class="tweet-buttons">
+          <span class="button button-blue ink" ng-click='showTwit("po")'>Popular</span>
+          <span class="button button-green ink" ng-click='showTwit("p")'>Positive</span>
+          <span class="button button-red ink" ng-click='showTwit("n")'>Negative</span>
+        </div>
+
+        <div ng-bind-html="CurrentTwit"></div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="Sociofuzz">
+<ion-content ng-class="{expanded:isExpanded}">
+    
+    <div class="card">
+        <div class="movie-sect">
+        <div class="search-movie">
+            <div class="search-label">
+            <label class="movie-about-name"><input ng-model="searchText" placeholder="Search Movies ..." class="sbar"></label>
+            </div>
+            <div ng-repeat="mv in moviesall | filter:searchText">
+                <div ui-sref="app.profile({ moviename : mv.uname  })" class="sdetails padding">
+                    <div class="mvname">
+                        {{ mv.name }}
+                    </div>
+                    <div class="mvrank">
+                        <div class="rnk">Rating: {{ mv.rank }} </div>
+                        <div class="rnk"><i class="ion-social-twitter"></i> {{ mv.tweetcount }} tweets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        </div>
+    </div>
+
+</ion-content>
+</ion-view>

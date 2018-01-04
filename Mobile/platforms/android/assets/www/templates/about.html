@@ -1,0 +1,62 @@
+<ion-view view-title="Movie Info">
+    <ion-content ng-class="{expanded:isExpanded}">
+        
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark">
+                <div class="about-card">
+                    <div class="trailer-image">
+
+                    <iframe width="300" height="250" ng-src="{{ trustSrc(about.trailer) }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark padding">
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Release Date</div>
+                <p class="val">{{ about.meta.buff.release_date }}</p>
+            </div>
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Running time</div>
+                <p class="val">{{ about.meta.buff.running_time }}</p>
+            </div>
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Produced By</div>
+                <p class="val">{{ about.meta.wiki['Produced by'] }}</p>
+            </div>
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Directed By</div>
+                <p class="val">{{ about.meta.wiki['Directed by'] }}</p>
+            </div>
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Genre</div>
+                <p class="val">{{ about.meta.buff.genre }}</p>
+            </div>
+            <div class="about-card about-card-list col-50">
+                <div class="movie-label">Language</div>
+                <p class="val">{{ about.meta.buff.lang }}</p>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark padding">
+                <div class="item-text-wrap">
+                    <div class="about-card">
+                        <div class="movie-label">Star Cast</div>
+                        <div class="movie-actor-image">
+                        <div ng-repeat="(name, img) in about.actsimg" class="actor-image">
+                            <img class="movie-cast" src="data:image/jpeg;base64,{{ img  }}">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-view>

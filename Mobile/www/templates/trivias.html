@@ -1,0 +1,39 @@
+<ion-view view-title="Songs and Trivias">
+    <ion-content ng-class="{expanded:isExpanded}">
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark padding">
+                <div class="about-card">
+                    <div class="movie-label">Songs List</div>
+                    <div class="list" ng-repeat="song in tracks">
+                        <p class="val">
+                            {{ song.track_name }} ( {{ song.duration }} )
+                        </p> 
+                        <p>
+                            Singer(s): {{ song.singer['Playback Singer'] }}
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark padding">
+                <div class="about-card">
+                    <div class="movie-label">Trivias and Goofs</div>
+                    <div class="list" ng-repeat="trivia in trivias">
+                        <div class="row trivrow item-text-wrap">
+                                {{ trivia }}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+<ion-view view-title="Sociofuzz - Home">
+<ion-content ng-class="{expanded:isExpanded}">
+
+<div class="tabs tabs-dark tabs-icon-top static">
+    <a class="tab-item" ng-class="{ active: isSet(1) }">
+        <i class="icon ion-ios-list" ng-click="setTab(1)"></i> Latest Movies
+    </a>
+    <a class="tab-item" ng-class="{ active: isSet(2) }">
+        <i class="icon ion-ios-pie" ng-click="setTab(2)" ></i> Popular Movies 
+    </a>
+</div>
+
+<div class="card" ng-show="isSet(1)">
+    <div class="movie-about-name movie-login-name">Latest Released Movies</div>
+    <div class="movie-sect">
+        <div class="movie-cardish" ng-repeat="mv in index1.upcoming[0].projection">
+            <div ui-sref="app.profile({ moviename : mv.uname  })" class="movie-poster1">
+                <!-- <img src="{{ mv.poster  }}" > -->
+                <img src="data:image/jpeg;base64,{{ mv.wikiimg[0]  }}">
+            </div>
+            <div class="movie-cardish-details">
+                <div class="movie-tweets">
+                    <span ng-bind-html="mv.stars[0]"></span>
+                    <span class="movie-card-rank"> {{ mv.rank }}</span>
+                </div>
+                <div class="movie-tweets-span"><i class="ion-social-twitter"></i> {{ mv.tweetcount }} tweets</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" ng-show="isSet(2)">
+    <div class="movie-about-name movie-login-name">Popular Movies</div>
+    <div class="movie-sect">
+        <div class="movie-cardish" ng-repeat="mv in index1.alltime[0].projection">
+            <div ui-sref="app.profile({ moviename : mv.uname  })" class="movie-poster1">
+                <!-- <img src="{{ mv.poster  }}" > -->
+                <img src="data:image/jpeg;base64,{{ mv.wikiimg[0]  }}">
+            </div>
+            <div class="movie-cardish-details">
+                <div class="movie-tweets">
+                    <span ng-bind-html="mv.stars[0]"></span>
+                    <span class="movie-card-rank"> {{ mv.rank }}</span>
+                </div>
+                <div class="movie-tweets-span"><i class="ion-social-twitter"></i> {{ mv.tweetcount }} tweets</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</ion-content>
+</ion-view>

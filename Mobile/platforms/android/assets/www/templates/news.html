@@ -1,0 +1,15 @@
+<ion-view view-title="News and References">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div ng-repeat="new in news">
+            <div class="card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item-text-wrap">
+                        <div class="row newsrow">
+                            <a ng-click="itemDetail('{{ new.link }}')">{{ new.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

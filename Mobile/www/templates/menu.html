@@ -1,0 +1,40 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="fabContent"></ion-nav-view>
+        <ion-nav-view name="menuContent" ng-class="{expanded: isExpanded}" ></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right">
+        <ion-header-bar class="expanded">
+            <span class="avatar" style="background: url('img/logo.png'); background-size: cover;" width="50px" height="50px"></span>
+            <br>
+            <h2>Sociofuzz - Movies Social Ratings and Insights </h2>
+        </ion-header-bar>
+
+
+        <br><br><br>
+        <ion-content class="stable-bg has-expanded-header tris">
+            <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.home" class="tli">
+                    Home
+                </ion-item>
+                <hr>
+                <ion-item nav-clear menu-close ui-sref="app.allmovies" class="tli">
+                    Movies Index
+                </ion-item>
+                <hr>
+                <ion-item nav-clear menu-close ui-sref="app.aboutus" class="tli">
+                    About Us
+                </ion-item>
+                <hr>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

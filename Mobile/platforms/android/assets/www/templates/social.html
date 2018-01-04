@@ -1,0 +1,191 @@
+<ion-view view-title="Gallery">
+<ion-content ng-class="{expanded:isExpanded}">
+
+<div class="item card-item">
+    <div class="card stable-bg ink ink-dark">
+        <div class="item-text-wrap">
+            <!-- <div class="row social-section-start"> -->
+            <div class="movie-about-name">Social Sentiment</div>
+            <!-- </div> -->
+            <div class="row"> 
+                <div class="col-20 percent-text">Positive</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.promotion.val }}%</div>
+            </div>                    
+            <div class="row"> 
+                <div class="col-20 percent-text">Neutral</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 23%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.cast.val }}%</div>
+            </div>
+            <div class="row"> 
+                <div class="col-20 percent-text">Negative</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped red" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.song.val }}%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="item card-item">
+    <div class="card stable-bg ink ink-dark">
+        <div class="item-text-wrap">
+            <!-- <div class="row social-section-start"> -->
+            <div class="movie-about-name">Theme Analysis</div>
+            <!-- </div> -->
+            <div class="row"> 
+                <div class="col-20 percent-text">Promotion</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal.analyzed.themes_rating.promotion.val }}%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.promotion.val }}%</div>
+            </div>                    
+            <div class="row"> 
+                <div class="col-20 percent-text">Cast</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal.analyzed.themes_rating.cast.val }}%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.cast.val }}%</div>
+            </div>
+            <div class="row"> 
+                <div class="col-20 percent-text">Music</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal.analyzed.themes_rating.song.val }}%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.song.val }}%</div>
+            </div>
+            <div class="row"> 
+                <div class="col-20 percent-text">Story</div>
+                <div class="progress col-50">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal.analyzed.themes_rating.story.val }}%">
+                    </div>
+                </div>
+                <div class="col-10 percent-val">{{ anal.analyzed.themes_rating.story.val }}%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="item card-item">
+    <div class="card stable-bg ink ink-dark">
+        <div class="item-text-wrap">
+            <!-- <div class="row"> -->
+            <div class="movie-about-name">Popular Movie Hashtags</div>
+            <!-- </div> -->
+            <div ng-repeat="tag in anal.analyzed.hashtags"> 
+                <div class="row"> 
+                    <div class="col-50 percent-text">#{{ tag[0] }}</div>
+                    <div class="col-10"></div>
+                    <div class="col-40 percent-val">{{ tag[2] }} mentions</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="item card-item">
+    <div class="card stable-bg ink ink-dark">
+        <div class="item-text-wrap">
+            <!-- <div class="row"> -->
+            <div class="movie-about-name">Popular Movie Accounts</div>
+            <!-- </div> -->
+            <div ng-repeat="tag in anal.analyzed.mentions"> 
+                <div class="row"> 
+                    <div class="col-50 percent-text">@{{ tag[0] }}</div>
+                    <div class="col-10"></div>
+                    <div class="col-40 percent-val">{{ tag[2] }} mentions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card stable-bg ink ink-dark">
+    <!-- <div class="row"> -->
+    <div class="movie-about-name social-section-start">Popular Users</div>
+    <!-- </div> -->
+    <div ng-repeat="swag in anal.analyzed.user_details | limitTo:24" class="social-img">
+        <img ng-src="{{ swag.lnk }}">
+    </div>
+</div>
+
+<div class="item card-item">
+    <div class="card stable-bg ink ink-dark">
+        <div class="item-text-wrap">
+            <!-- <div class="row"> -->
+            <div class="movie-about-name">{{ anal.analyzed.cities_count }} popular cities</div>
+            <!-- </div> -->
+            <div ng-repeat="link in anal.analyzed.cities">
+                <div class="row">
+                    <div class="col-50 percent-text">{{ link.label }}</div>
+                    <div class="col-10"></div>
+                    <div class="col-40 percent-val">{{ link.value }} tweets</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="item card-item">
+        <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
+            <div class="item-text-wrap">
+                <div class="row social-section-start">
+                    <div class="movie-about-name">Day wise analysis</div>
+                </div>
+                
+                <div class="row"> 
+                    <div class="col-60 percent-text">Monday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Mon.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Tuesday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Tue.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Wednesday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Wed.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Thursday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Thu.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Friday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Fri.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Saturday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Sat.val }}</div>
+                </div>
+                <div class="row"> 
+                    <div class="col-60 percent-text">Sunday</div>
+                    <div class="col-10"></div>
+                    <div class="col-20 percent-val">{{ anal.analyzed.days.Sun.val }}</div>
+                </div>  
+
+                
+                
+            </div>
+        </div>
+    </div> -->
+
+</ion-content>
+</ion-view>

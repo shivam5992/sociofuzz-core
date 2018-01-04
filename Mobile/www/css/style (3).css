@@ -1,0 +1,521 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700italic,900italic,700,500italic,500,300italic,300,100italic,100);
+
+
+body
+{
+	font-family: 'Roboto', sans-serif;
+}
+.has-header
+{
+	background: url("http://www.sociofuzz.com/static/images/background.png");
+}
+/* General
+==================================*/
+h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 42px;
+}
+
+
+/* Utilities
+==================================*/
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+/*p {
+    color: #555;
+    margin: 0 0 25px;
+}*/
+
+.scroll {
+    height: 100%;
+}
+
+
+/* Menu
+==================================*/
+.menu .bar.bar-header.expanded {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #222;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+
+/* Login
+==================================*/
+.app-icon {
+    background-color: #fff;
+    background: url('../img/crown.jpg') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.social-login {
+    position: fixed;
+    bottom: 0;
+}
+
+
+
+
+
+/*Critics Tab*/
+.critic-rating
+{
+   font-size: 15px;
+  border-radius: 30px;
+  padding:  12px 16px;
+  color: white;
+  display: table-cell;
+}
+.rv-row
+{
+  padding-top:10px;
+}
+
+/* Trivias tab*/
+.trivia-item
+{
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* Details tab */
+.movie-name
+{
+    color: #4E5E6A;
+    font-size: 20px;
+    font-weight: 500;
+}
+/*.movie-poster img
+{
+    width: 100px;
+}*/
+
+.hero
+{
+    height: 160px;
+}
+
+.movie-rating
+{
+  padding: 12px 10px;
+  font-weight: 500;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  float: left;
+}
+.movie-tag
+{
+    color: #4E5E6A;
+    font-size: 14px;
+}
+.stars
+{
+  margin-left: 10px;
+}
+
+.stats
+{
+    color: #4E5E6A;
+    /*font-size: 14px;*/
+    margin-top: 10px;
+}
+.stat-box
+{
+  padding: 6px 6px;
+  background: #EC2;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  /*float: left;*/
+}
+
+
+
+
+
+
+/* Tweets */
+
+.tweet-box-content {
+  padding: 20px;
+  border-bottom: 6px solid #f5f5f1;
+}
+.tweet-box-icons, .tweet-box-image {
+  display: none;
+}
+.tweet-box-detail {
+  display: inline-block;
+}
+.tweet-box-name {
+  font-size: 15px;
+  font-weight: 300;
+}
+.tweet-box-handle {
+  display: inline-block;
+  color: gray;
+  font-size: 12px;
+}
+.tweet-box-date {
+  display: inline-block;
+  color: gray;
+  margin-left: 10px;
+}
+.tweet-box-bottom {
+  clear: both;
+  padding-top: 5px;
+}
+.tweet-box-text {
+  font-size: 15px;
+  padding-top: 5px;
+}
+.tweet-buttons span
+{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  padding: 4px 25px;
+}
+.button-green
+{
+  background-color: green;
+  color: white;
+}
+.button-green
+{
+  background-color: green;
+  color: white;
+}
+.button-red
+{
+  background-color: red;
+  color: white;
+}
+.button-blue
+{
+  background-color: blue;
+  color: white;
+}
+.active
+{
+  background-color: gray;
+  color: white;
+}
+
+
+
+
+
+
+
+/* About */
+.movie-about-poster
+{
+    width: 100px;
+}
+.movie-about-name
+{
+    color: #4E5E6A;
+    font-size: 16px;
+    font-weight: 500;
+   /* margin-left: 10px;*/
+}
+.movie-about-summ p
+{
+    color: #4E5E6A;
+    font-size: 10px;
+    margin-left: 10px;
+}
+.movie-cast
+{
+    width: 75px;
+    height: 75px;
+    background-position: center; 
+    background-size: cover;
+    border-radius: 2px;
+    margin-top: 5px;
+/*    margin-right: 10px;*/
+    display: inline-block;
+}
+.movie-trailer
+{
+    width: 40px;
+    height: 40px;
+    background-position: center; 
+    background-size: cover;
+    border-radius: 10%;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.key, .val {
+  color: #222;
+  font-size: 19px;
+}
+
+
+
+
+
+/*.progress-bar
+{
+  margin-left: 15px;
+}*/
+.percent-val
+{
+  /*margin-top: 12px;*/
+  margin-left: 14px;
+  color: #222;
+  font-size: 14px;
+}
+.percent-text
+{
+  margin-left: 5px;
+  /*margin-top: 12px;*/
+  color: #222;
+ font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+.newsrow a
+{
+  text-decoration: none;
+  padding:10px;
+  color: #222;
+}
+
+
+.trivrow
+{
+  color: #222;
+  padding: 10px;
+}
+
+
+
+
+
+/*about us css*/
+
+.about-page-card .col-40
+{
+	padding-right:5px;
+}
+.about-page-card .col-60
+{
+	padding-left:5px;
+}
+.card-item.item
+{
+	padding: 2px;
+}
+.card
+{
+	border-radius: 0px;
+	font-family: 'Roboto', sans-serif;
+	padding: 5px;
+	background: white;
+	font-size: 13px;
+	box-shadow: none;
+}
+p.movie-about-summ {
+    font-size: 13px;
+}
+.about-card
+{
+	padding: 5px;
+}
+.actor-image
+{
+	display: inline-block;
+	padding: 0px 10px;
+	padding-left: 0px;
+}
+p.val {
+    font-size: 13px;
+}
+.about-card-list
+{
+	float: left;
+	display: inline-block;
+	width: 50%;
+}
+.trailer-image img
+{
+    height: 150px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+.cardish
+{
+  display: inline-block;
+}
+
+
+
+
+
+
+/*login page css start*/
+
+.movie-cardish
+{
+  display: inline-block;
+  width: 50%;
+  float: left;
+  margin-bottom: 15px;
+}
+.movie-login-name
+{
+  padding-left: 10px;
+}
+.movie-cardish-details
+{
+  margin: 7.5px;
+  margin-top: 0px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+.movie-poster
+{
+  padding: 7.5px;
+  padding-bottom: 0px;
+}
+.movie-poster img
+{
+  width: 100%;
+  height: 230px;
+}
+.movie-cardish-trailer 
+{
+  margin-bottom: 10px;
+  padding: 0px 7.5px;
+}
+/*login page css end*/
+
+
+/*social page css start*/
+.social-sentiment canvas
+{
+  width: 100px;
+}
+.social-sentiment-box
+{
+  position: relative;
+}
+span.social-percentage 
+{
+    position: absolute;
+    color: #333;
+    top: 45px;
+    margin-left: 32px;
+    font-size: 20px;
+}
+span.social-reaction 
+{
+    position: absolute;
+    color: #333;
+    top: 110px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.social-sentiment .card
+{
+  padding-bottom: 30px;
+}
+.social-sentiment-section
+{
+  padding: 5px 7.5px;
+}
+/*social page css end*/
+
+
+
+
+.progress
+{
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.progress-bar
+{
+  background-color: #4299CF;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    float: left;
+    /* width: 0; */
+    height: 18px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.social-section-start
+{
+  margin-bottom: 10px;
+}

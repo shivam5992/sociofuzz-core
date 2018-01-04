@@ -1,0 +1,11 @@
+Post Today
+Mobile Css 
+	canvas
+	tweet date	
+	movie stats 
+	Sentiment
+
+Later	
+	top bar - upcoming | all | top
+	Blog
+	Sorting
