@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ 	<link rel="shortcut icon" href="/static/sociofuzz-icon.png" type="image/x-icon">
+ 	<link rel="shortcut icon" sizes="57x57" href="/static/sociofuzz-icon.png">
+ 	
+ 	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Sociofuzz is a social rating, reviews and analysis platform, it provides social analysis, reviews and ratings about the latest trends, movies, politics and sports." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="Sociofuzz">
+    <meta property="og:url" content="http://www.sociofuzz.com/">
+    <meta name="og:title" content="Sociofuzz - Movie Ratings, Reviews and Analysis from Social Media">
+    <meta name="og:description" content="Sociofuzz is a social rating, reviews and analysis platform, it provides social analysis, reviews and ratings about the latest trends, movies, politics and sports.">
+    <meta name="og:image" content="http://www.sociofuzz.com/static/images/teaser4.jpg">
+    <meta property="og:site_name" content="Sociofuzz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sociofuzz - Movie Ratings, Reviews and Analysis from Social Media" />
+    <meta property="og:description" content="Sociofuzz is a social rating, reviews and analysis platform, it provides social analysis, reviews and ratings about the latest trends, movies, politics and sports." />
+    <meta property="og:url" content="http://www.sociofuzz.com/" />
+    <meta property="og:image" content="http://www.sociofuzz.com/static/images/teaser4.jpg" />
+    <link rel="canonical" href="http://www.sociofuzz.com/" />
+
+   	<title>Sociofuzz - Movie Ratings, Reviews and Analysis from Social Media</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+ 	<link rel="stylesheet" href="static/css/indexpage.css">
+ 	<link rel="stylesheet" href="static/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+ 	<link rel="stylesheet" href="static/css/style.css">
+ 	<link rel="stylesheet" href="static/css/elements.css">
+ 	
+ 	<script type="text/javascript" src="static/js/indexpage.js"></script>
+ 	<script type="text/javascript" src="static/js/custom-front.js"></script>
+ </head>
+
+
+<!-- <div id="ip-container" class="ip-container">
+	<span class="ip-header">
+		<div class="ip-loader">
+			<svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+				<path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+				<path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+			</svg>
+		</div>
+	</span>
+</div> -->
+
+<div class="header-section">
+	{% include 'header.html' %}
+</div>
+
+<body class="fornt-page-section">
+	<div id="dic_bubble" class="selection_bubble" style="z-index:9999;" fetching="false"></div>
+	<div class="top-content" style="position: relative; z-index: 0; background: none;">
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<div class="inner-bg sociofuzz-front-page-dis">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 text">
+						<h1 class="toptext wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig; -webkit-animation-name: fadeInLeftBig;">Sociofuzz  </h1>
+						<div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig; -webkit-animation-name: fadeInLeftBig;">
+							<p>
+								Only platform for movies, which provides most relevant infomation by mashing data from social media streams. Movie rating and social insights using public opinions from twitter, facebook and other networks.
+							</p>
+						</div>
+						<div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp; -webkit-animation-name: fadeInUp;">
+							<div class="movies-search-box">
+								<i class="fa fa-search"></i>
+								<input class="tags" type="text" name="movies" placeholder="Search for Movies">
+								<a class="btn search-button-link" href="#features">Search</a>
+							</div>
+							<div class="text-hides">
+								<div class="hide-text">Movie Social Ratings</div>
+								<div class="hide-text">Social Media Buzz</div>
+								<div class="hide-text">Actor and Theme Ratings</div>
+								<div class="hide-text">Critic Reviews</div>
+								<div class="hide-text">Trending Movie News</div>
+								<div class="hide-text">Social Insights</div>
+								<div class="hide-text">Movie Showtimes</div>
+								<div class="hide-text">Popular Tweets</div>
+								<div class="hide-text">Photo Gallery</div>
+								<div class="hide-text">Box Office Collection</div>
+								<div class="hide-text">Movie social ratings and insights</div>
+							</div>
+						</div>
+						<a href="#movies" class="btn btn-circle page-scroll arrow-button" id="clickme">
+							<i class="fa fa-angle-double-down animated"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 689px; width: 1439px; z-index: -999998; position: absolute;">
+			<img src="static/images/teaser4.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1600px; height: 700px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: 0px;" alt="Background Image">
+		</div>
+	</div>
+
+	<div class="features-container section-container upcoming-movies" id="movies">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 features section-description wow fadeIn" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					<h2>Trending Movies</h2>
+					<div class="divider-1 wow fadeInUp" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="row features-list upcoming-movie-front-section">
+				<div class = 'col-sm-1'></div>
+				{% for x in upcoming %}
+				{% for movie in x['projection'] %}        
+				<div class="col-sm-2 col-xs-6 wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="10" data-wow-delay="0.5s" style="visibility: hidden; -webkit-animation-duration: 1.5s; -webkit-animation-delay: 0.5s; -webkit-animation-name: none;">
+					<div class="movies-update">
+						<a href="/movie/{{ movie['uname'] }}">
+							{% if 'wikiimg' in movie %}
+							{% if  movie['wikiimg'][0] != None %}
+							<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['wikiimg'][0]  }}" >
+							{% else %}
+							<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+							{% endif %}
+							{% else %}
+							{% if movie['poster'] %}
+							<img src="{{ movie['poster'] }}" alt="Poster Movie">
+							{% else %}
+							<img src="{{ movie['trailer'][0]['Posters'][0].replace('w=1000','w=200') }}" alt="Poster Movie">
+							{% endif %}
+							{% endif %}
+						</a>
+						<div class="card-rating">{{ movie['rank'] }}</div>
+						<div class="movies-update-details">
+							<div class="movies-update-discription">
+								<div class="desc1">{{ movie['stars'][0]|safe }}</div>
+								<div class="desc1">{{ movie['stars'][1] }}</div>
+								<div class="desc1"><i class="fa fa-twitter"></i> {{ movie['tweetcount'] }} tweets</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% endfor %}
+			</div>	            
+		</div>
+	</div>
+
+	<div class="features-container section-container section-container-gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 features section-description wow fadeIn" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					<h2>Latest Posts</h2>
+					<div class="divider-1 wow fadeInUp" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{% for post in posts[:4] %}
+				<div class="col-md-6 blogIndex">
+					<div class="blogLink">
+						<a href="/blogs/{{ post['link'] }}">
+							{{ post['title'] }}
+						</a>
+					</div>
+					<div class="blogPosted">{{ post['PostedOn'] }}</div>
+				</div>
+				{% endfor %}
+			</div>	            
+		</div>
+	</div>
+
+	<div class="more-features-container section-container latest-trailers">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12  more-features section-description wow fadeIn" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					<h2>Latest Trailers</h2>
+					<div class="divider-1 wow fadeInUp" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;"><span></span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 latest-trailers-big">
+					{% set trailer = upcoming[0]['projection'][0] %}
+					{% if trailer['trailer']['video_link']|length > 0 %}
+
+						{% set imgid = trailer['trailer']['video_link'].split("watch?v=")[1] %}
+						{% set videolink = trailer['trailer']['video_link'] %}
+						<a class="video song-images" href="{{ videolink }}">
+							<img src="http://img.youtube.com/vi/{{ imgid }}/0.jpg" alt="Trailer Thumbnail"/>
+							<div class="fa fa-play"></div>
+						</a>
+					{% endif %}
+				</div>
+				<div class="col-md-6 col-sm-6 latest-trailers-small">
+					{% for x in upcoming %}
+					{% for trailer in x['projection'] %}
+					{% if loop.index > 1 %}
+					{% if trailer['trailer']['video_link']|length > 0 %}
+					<div class="col-md-6 col-sm-6">
+						<div class="row">
+							{% set imgid = trailer['trailer']['video_link'].split("watch?v=")[1] %}
+							{% set videolink = trailer['trailer']['video_link'] %}
+							<a class="video song-images" href="{{ videolink }}">
+								<img src="http://img.youtube.com/vi/{{ imgid }}/0.jpg" alt="Trailer Thumbnail" />
+								<div class="fa fa-play"></div>
+							</a>
+						</div>
+					</div>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+
+
+	<div class="more-features-container section-container latest-trailers section-container-gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12  more-features section-description wow fadeIn" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					<h2>Latest New Trailers</h2>
+					<div class="divider-1 wow fadeInUp" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;"><span></span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 latest-trailers-small">
+					{% for trail in trailers_data %}
+					
+					<div class="col-md-3 col-sm-3 trailer-img">
+						<div class="row">
+							{% set imgid = trail['url'].split("watch?v=")[1] %}
+							<a class="video song-images" href="{{ trail['url'] }}">
+								<img src="http://img.youtube.com/vi/{{ imgid }}/0.jpg" alt="Trailer Thumbnail" />
+								<div class="fa fa-play"></div>
+							</a>
+						</div>
+					</div>
+					
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+
+
+	<div class="features-container section-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 features section-description wow fadeIn" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+					<h2>All time socially popular movies</h2>
+					<div class="divider-1 wow fadeInUp" style="visibility: hidden; animation-name: none; -webkit-animation-name: none;">
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="row features-list upcoming-movie-front-section">
+				<div class = 'col-sm-1'></div>
+				{% for x in alltime %}
+				{% for movie in x['projection'] %}        
+				<div class="col-sm-2 col-xs-6 wow fadeInLeft" data-wow-duration="1.5s" data-wow-offset="10" data-wow-delay="0.5s" style="visibility: hidden; -webkit-animation-duration: 1.5s; -webkit-animation-delay: 0.5s; -webkit-animation-name: none;">
+					<div class="movies-update">
+						<a href="/movie/{{ movie['uname'] }}">
+
+							{% if 'wikiimg' in movie %}
+								{% if  movie['wikiimg'][0] != None %}
+									<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['wikiimg'][0]  }}" >
+								{% else %}
+									<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+								{% endif %}
+							{% else %}
+								{% if movie['poster'] %}
+									<img alt="Poster Movie" src="{{ movie['poster'] }}">
+								{% else %}
+									<img alt="Poster Movie" src="{{ movie['trailer'][0]['Posters'][0].replace('w=1000','w=200') }}">
+								{% endif %}
+							{% endif %}
+
+						</a>
+						<div class="card-rating">{{ movie['rank'] }}</div>
+						<div class="movies-update-details">
+							<div class="movies-update-discription">
+								<div class="desc1">{{ movie['stars'][0]|safe }}</div>
+								<div class="desc1">{{ movie['stars'][1] }}</div>
+								<div class="desc1"><i class="fa fa-twitter"></i> {{ movie['tweetcount'] }} tweets</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% endfor %}
+			</div>	            
+		</div>
+	</div>
+
+	<div class="section about socal-network-section" id="about">
+		<div class="container">
+			<div class="section-heading">
+				<h2>Sociofuzz Movie Index</h2>
+			</div>
+			<div class="graph"></div>
+			{% include 'moviegraph.html' %}
+		</div>
+	</div>
+	
+	{% include 'footer.html' %}
+	<!-- // <script src="static/js/preloader.js"></script> -->
+	<!-- // <script src="static/js/d3.js"></script> -->
+	<!-- // <script src="static/js/movieGraph.js"></script> -->
+</body>
+</html>

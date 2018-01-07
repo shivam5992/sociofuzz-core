@@ -1,0 +1,802 @@
+DedhIshqiya
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Yaariyan
+Inserted
+Inserted Updated Movie Json
+No Image for Ankit_Sharma[1]
+No Image for Ankit_Sharma[1]
+KarlePyaarKarle
+Inserted
+Inserted Updated Movie Json
+ParantheWaliGali
+Inserted
+Inserted Updated Movie Json
+JaiHo
+Inserted
+Inserted Updated Movie Json
+No Image for Daisy_Shah
+No Image for Danny_Denzongpa
+No Image for Daisy_Shah
+No Image for Danny_Denzongpa
+HaseeTohPhasee
+Inserted
+Inserted Updated Movie Json
+Gunday
+Inserted
+Inserted Updated Movie Json
+command SON([('aggregate', u'Gunday_ParsedTweets'), ('pipeline', [{'$sort': {'popularity_score': 1}}, {'$match': {'user.country': 'India'}}, {'$group': {'_id': {'userid': '$user.id'}, 'tweets1': {'$first': {'lang': '$lang', 'retweet_count': '$retweet_count', 'dimensions': '$dimensions', 'sentiment': '$sentiment', 'text': '$text', 'popularity_score': '$popularity_score', 'retweeted': '$retweeted', 'negative_words': '$negative_words', 'positive_words': '$positive_words', 'user': '$user', 'clean_text': '$clean_text', '_id': '$_id', 'companys': '$companys', 'created_at': '$created_at', 'favorite_count': '$favorite_count'}}}}]), ('allowDiskUse', True)]) on namespace MovieMasterTweets.$cmd failed: exception: aggregation result exceeds maximum document size (16MB)
+GulabiGang
+Inserted
+Inserted Updated Movie Json
+'Starring'
+'Starring'
+ShaadiKeSideEffects
+Inserted
+Inserted Updated Movie Json
+GulaabGang
+Inserted
+Inserted Updated Movie Json
+TotalSiyappa
+Inserted
+Inserted Updated Movie Json
+Bewakoofiyaan
+Inserted
+Inserted Updated Movie Json
+AnkhonDekhi
+Inserted
+Inserted Updated Movie Json
+GangofGhosts
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+The dotted field 'J._Brandon_Hill' in 'actsimg.J._Brandon_Hill' is not valid for storage.
+RaginiMMS2
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for Parvin_Dabas
+No Image for Sandhya_Mridul
+No Image for Anita_Hassanandani
+No Image for Karan_Taluja
+No Image for 
+No Image for Parvin_Dabas
+No Image for Sandhya_Mridul
+No Image for Anita_Hassanandani
+No Image for Karan_Taluja
+Dishkiyaoon
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for Sumit_Nijhawan
+No Image for Hasan_Zaidi
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for Sumit_Nijhawan
+No Image for Hasan_Zaidi
+No Image for 
+No Image for 
+No Image for 
+Youngistaan
+Inserted
+Inserted Updated Movie Json
+MainTeraHero
+Inserted
+Inserted Updated Movie Json
+BhoothnathReturns
+Inserted
+Inserted Updated Movie Json
+TwoStates
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+DekhTamashaDekh
+Inserted
+Inserted Updated Movie Json
+KyaDilliKyaLahore
+Inserted
+Inserted Updated Movie Json
+KahinHaiMeraPyar
+Inserted
+Inserted Updated Movie Json
+No Image for Abhishek_Sethiya
+No Image for Abhishek_Sethiya
+Koyelaanchal
+Inserted
+Inserted Updated Movie Json
+Mastram
+Inserted
+Inserted Updated Movie Json
+No Image for Tara_Alisha
+No Image for Tara_Alisha
+YehHaiBakrapur
+Inserted
+Inserted Updated Movie Json
+TheXpos
+Inserted
+Inserted Updated Movie Json
+Heropanti
+Inserted
+Inserted Updated Movie Json
+Kochadaiiyaan
+Inserted
+Inserted Updated Movie Json
+The dotted field 'R._Sarathkumar' in 'actsimg.R._Sarathkumar' is not valid for storage.
+KukuMathurKiJhandHoGayi
+Inserted
+Inserted Updated Movie Json
+Filmistaan
+Inserted
+Inserted Updated Movie Json
+Fugly
+Inserted
+Inserted Updated Movie Json
+Humshakals
+Inserted
+Inserted Updated Movie Json
+'Starring'
+'Starring'
+EkVillain
+Inserted
+Inserted Updated Movie Json
+BobbyJasoos
+Inserted
+Inserted Updated Movie Json
+LekarHumDeewanaDil
+Inserted
+Inserted Updated Movie Json
+HumptySharmaKiDulhania
+Inserted
+Inserted Updated Movie Json
+HateStory2
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Riyasat
+Inserted
+Inserted Updated Movie Json
+MereGenieUncle
+'reviews_data'
+SinghamReturns
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Mardaani
+Inserted
+Inserted Updated Movie Json
+MaryKom
+Inserted
+Inserted Updated Movie Json
+FindingFanny
+Inserted
+Inserted Updated Movie Json
+Daawat-E-Ishq
+Inserted
+Inserted Updated Movie Json
+ChaarfutiyaChhokare
+Inserted
+Inserted Updated Movie Json
+No Image for Umesh_Jagtap
+No Image for Umesh_Jagtap
+DesiKattey
+Inserted
+Inserted Updated Movie Json
+Haider
+Inserted
+Inserted Updated Movie Json
+Jigariyaa
+Inserted
+Inserted Updated Movie Json
+No Image for Harshvardhan_Deo
+No Image for Cherry_Mardia
+No Image for Virendar_Saxena
+No Image for K.K._Raina
+No Image for Navni_Parihar
+No Image for Natasha_Rastogi
+No Image for Vineeta_Malik
+No Image for Deepak_Chadha
+No Image for Ketan_Singh
+No Image for Sneha_Deori
+No Image for Harshvardhan_Deo
+No Image for Cherry_Mardia
+No Image for Virendar_Saxena
+No Image for K.K._Raina
+No Image for Navni_Parihar
+No Image for Natasha_Rastogi
+No Image for Vineeta_Malik
+No Image for Deepak_Chadha
+No Image for Ketan_Singh
+No Image for Sneha_Deori
+EkkeesTopponKiSalaami
+Inserted
+Inserted Updated Movie Json
+Tamanchey
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+MumbaiCanDanceSaala
+Inserted
+Inserted Updated Movie Json
+SuperNani
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+ChaarSahibzaade
+Inserted
+Inserted Updated Movie Json
+RangRasiya
+Inserted
+Inserted Updated Movie Json
+No Image for Nandana_Sen
+No Image for Feryna_Wazheir
+No Image for Triptha_Parashar
+No Image for Nandana_Sen
+No Image for Feryna_Wazheir
+No Image for Triptha_Parashar
+TheShaukeens
+Inserted
+Inserted Updated Movie Json
+KillDil
+Inserted
+Inserted Updated Movie Json
+Ungli
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for Angad_Bedi
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for Angad_Bedi
+No Image for 
+No Image for 
+No Image for 
+ActionJackson
+Inserted
+Inserted Updated Movie Json
+PK
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+MumbaiCanDanceSaala
+Inserted
+Inserted Updated Movie Json
+Tevar
+Inserted
+Inserted Updated Movie Json
+CrazyCukkadFamily
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for Nora_Fatehi
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for Nora_Fatehi
+No Image for 
+No Image for 
+No Image for 
+SharafatGayiTelLene
+Inserted
+Inserted Updated Movie Json
+DollyKiDoli
+Inserted
+Inserted Updated Movie Json
+Hawaizaada
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Khamoshiyan
+Inserted
+Inserted Updated Movie Json
+No Image for Gurmeet_Choudhary
+No Image for Sapna_Pabbi
+No Image for Gurmeet_Choudhary
+No Image for Sapna_Pabbi
+Shamitabh
+Inserted
+Inserted Updated Movie Json
+Badlapur
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+AbTakChhappan2
+Inserted
+Inserted Updated Movie Json
+DumLagaKeHaisha
+Inserted
+Inserted Updated Movie Json
+Badmashiyaan
+Inserted
+Inserted Updated Movie Json
+DirtyPolitics
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+NH10
+Inserted
+Inserted Updated Movie Json
+DilliwaliZaalimGirlfriend
+Inserted
+Inserted Updated Movie Json
+Hunterrr
+Inserted
+Inserted Updated Movie Json
+DetectiveByomkeshBakshy
+Inserted
+Inserted Updated Movie Json
+PaisaHoPaisa
+Inserted
+Inserted Updated Movie Json
+No Image for Dhruv_Bhandari
+No Image for Madalasa_Sharma
+No Image for Kanishka_Soni
+No Image for Vivek
+No Image for 
+No Image for Antony
+No Image for Dhruv_Bhandari
+No Image for Madalasa_Sharma
+No Image for Kanishka_Soni
+No Image for Vivek
+No Image for 
+No Image for Antony
+DharamSankatMein
+Inserted
+Inserted Updated Movie Json
+EkPaheliLeela
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+MargaritawithaStraw
+Inserted
+Inserted Updated Movie Json
+No Image for Kalki_Koechlin[2]
+No Image for Kalki_Koechlin[2]
+Mr.X
+Inserted
+Inserted Updated Movie Json
+NH-8RoadtoNidhivan
+Inserted
+Inserted Updated Movie Json
+IshqKeParindey
+Inserted
+Inserted Updated Movie Json
+KaagazKeFools
+Inserted
+Inserted Updated Movie Json
+No Image for Nishikant_Dixit
+No Image for Nishikant_Dixit
+GabbarisBack
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+KuchKuchLochaHai
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Piku
+Inserted
+Inserted Updated Movie Json
+BombayVelvet
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+TanuWedsManuReturns
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+The dotted field 'R._Madhavan' in 'actsimg.R._Madhavan' is not valid for storage.
+ILoveDesi
+Inserted
+Inserted Updated Movie Json
+Ishqedarriyaan
+Inserted
+Inserted Updated Movie Json
+PSePMTak
+Inserted
+Inserted Updated Movie Json
+No Image for Indrajeet_Soni
+No Image for Indrajeet_Soni
+WelcometoKarachi
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+DilDhadakneDo
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+HamariAdhuriKahani
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+ABCD2
+Inserted
+Inserted Updated Movie Json
+MissTanakpurHaazirHo
+Inserted
+Inserted Updated Movie Json
+Uvaa
+'NoneType' object has no attribute '__getitem__'
+BezubaanIshq
+Inserted
+Inserted Updated Movie Json
+GudduRangeela
+Inserted
+Inserted Updated Movie Json
+No Image for Aditi_Rao_Hydari[1]
+No Image for Aditi_Rao_Hydari[1]
+SecondHandHusband
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Baahubali
+command SON([('aggregate', u'Baahubali_ParsedTweets'), ('pipeline', [{'$match': {'user.country': 'India'}}, {'$group': {'_id': '$user.id', 'projection': {'$first': '$user'}}}, {'$sort': {'projection.followers_count': -1}}])]) on namespace MovieMasterTweets.$cmd failed: exception: aggregation result exceeds maximum document size (16MB)
+BajrangiBhaijaan
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+AisaYehJahaan
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for Prisha_Dabbas
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for Prisha_Dabbas
+No Image for 
+No Image for 
+No Image for 
+Masaan
+Inserted
+Inserted Updated Movie Json
+Drishyam
+Inserted
+Inserted Updated Movie Json
+Bangistan
+Inserted
+Inserted Updated Movie Json
+Brothers
+Inserted
+Inserted Updated Movie Json
+No Image for Jackie_Shroff[1]
+No Image for Jackie_Shroff[1]
+ManjhiTheMountainMan
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+AllIsWell
+Inserted
+Inserted Updated Movie Json
+No Image for Supriya_Pathak[1]
+No Image for Supriya_Pathak[1]
+Phantom
+Inserted
+Inserted Updated Movie Json
+WelcomeBack
+Inserted
+Inserted Updated Movie Json
+No Image for Shiney_Ahuja[1]
+No Image for Shiney_Ahuja[1]
+Hero
+Inserted
+Inserted Updated Movie Json
+KattiBatti
+Inserted
+Inserted Updated Movie Json
+KisKiskoPyaarKaroon
+Inserted
+Inserted Updated Movie Json
+CalendarGirls
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Timeout
+Inserted
+Inserted Updated Movie Json
+No Image for Chirag_Malhotra
+No Image for Pranay_Pachauri
+No Image for Chirag_Malhotra
+No Image for Pranay_Pachauri
+BhaagJohnny
+Inserted
+Inserted Updated Movie Json
+SinghIsBling
+Inserted
+Inserted Updated Movie Json
+Talvar
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Jazbaa
+Inserted
+Inserted Updated Movie Json
+PyaarKaPunchnama2
+Inserted
+Inserted Updated Movie Json
+No Image for Omkar_Kapoor
+No Image for Omkar_Kapoor
+WeddingPullav
+Inserted
+Inserted Updated Movie Json
+BumperDraw
+Inserted
+Inserted Updated Movie Json
+Shaandaar
+Inserted
+Inserted Updated Movie Json
+GudduKiGun
+Inserted
+Inserted Updated Movie Json
+No Image for Aparna_Sharma
+No Image for Aparna_Sharma
+OnceUponATimeInBihar
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for Deepak_Singh
+No Image for 
+No Image for 
+No Image for [1][2]
+No Image for 
+No Image for 
+No Image for Deepak_Singh
+No Image for 
+No Image for 
+No Image for [1][2]
+LoveExchange
+'NoneType' object has no attribute '__getitem__'
+MainAurCharles
+Inserted
+Inserted Updated Movie Json
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+No Image for 
+Titli
+Inserted
+Inserted Updated Movie Json
+[Finished in 1110.8s]
+
+Gunday
+GulabiGang
+GangofGhosts
+Kochadaiiyaan
+MereGenieUncle
+TanuWedsManuReturns
+Uvaa
+Baahubali

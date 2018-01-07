@@ -1,0 +1,123 @@
+@media screen and (max-width: 480px) and (min-width:67px)  {
+.poster-image-section
+{
+    width: 25%;
+}
+.poster-detail
+{
+    width: 75%;
+}
+.total-tweet-reach-t
+{
+	padding-left: 0px;
+}
+}
+
+.review-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 60px;
+  }
+
+@media screen and (max-width: 767px) and (min-width:67px)  {
+.poster-image-section
+{
+    width: 20%;
+    display: inline-block;
+    float: left;
+}
+.poster-detail
+{
+  width: 80%;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 0px;
+}
+.release-date-time
+{
+	display: inline-block;
+	width: 100%;
+}
+.release-date-time .left-sction
+{
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+.rate-percetage-tweet
+{
+	/*display: none;*/
+}
+
+.influencex
+{
+    display: none
+}
+
+.starring-and-producer .mobile-starring
+{
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+
+
+
+
+.mobile-movie-detail, .mobile-social-detail
+{
+    font-size: 13px;
+    padding: 10px 16px 10px 16px;
+    display: inline-block;
+    color: #888;
+    margin-right: 7px;
+    background-color: white;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    box-shadow: inset 0px 1px 26px 0px rgba(203, 203, 203, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+}
+.mobile-movie-detail.active, .mobile-social-detail.active
+{
+	background: #9eafb5;
+	color: white;
+}
+.mobile-button-section
+{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    /*position: fixed;*/
+}
+.head-label-1, .head-label-5, .head-label-6, .head-label-2, .head-label-3, .head-label-4
+{
+    font-size: 20px;
+}
+.song-name
+{
+    font-size: 18px;
+}
+.quote-section-one
+{
+    font-size: 14px;
+}
+.part5
+{
+display: none;
+}
+.movie-data-section-3 .tabs.tabs-style-bar
+{
+    display: none;
+}
+.gerne-section.mobile-starring
+{
+    display: inline-block;
+    width: 50%;
+}
+}

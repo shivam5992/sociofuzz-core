@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ trend['name'] }} - Social Media Buzz and Insights | sociofuzz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../static/css/elements.css">
+	<link href="../static/css/pages.css" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" href="../static/css/jqui.css">
+	<script type="text/javascript" src="../static/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../static/js/jqui.js"></script>
+	
+	<script type="text/javascript" src="../static/js/common.js"></script>
+	<script type="text/javascript" src="../static/js/custom.js"></script>
+
+
+	<link rel="stylesheet" href="../static/css/trending.css">
+
+	
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Negative',     {{ trend['analyzed']['sentiment']['negative'] }} ],
+          ['Positive',      {{ trend['analyzed']['sentiment']['positive'] }} ],
+          ['Neutral',  {{ trend['analyzed']['sentiment']['neutral'] }} ],
+        ]);
+
+        var options = {
+          
+          chartArea : { 
+          	top : '0',
+          	// height: '30'
+          	'height': '90%'
+          },
+          colors : ['#F27979' , '#7CB02E' , '#A9DAE8'],
+          legend: {position: 'none'},
+          backgroundColor: { fill:'transparent' },
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+</head>
+
+{% include 'header.html' %}
+
+
+<body onload="showTweets('{{ trend['_id'] }}', 'pop');">
+	<div class="trending-topics">
+		<div class="col-md-12">
+			<div class="col-md-8">
+				<div class="left-section-one">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="left-image-section">
+								<img alt="Poster Movie" src="{{ trend['image'] }}">
+							</div>
+						</div>
+						<div class="col-md-9">
+					
+							<div class="right-data-section trending-card">
+									<div class="col-md-6 pad0">
+										<div class="trending-topic-title1">
+											#SalmanVerdict	 
+											<br>
+										</div>
+										<div class="numtag">
+											<div class="num1">
+												<span class="num">{{ trend['analyzed']['total_tweets'] }}</span> <br>
+												<span class="num2"><i class="fa fa-twitter"></i>  tweets</span>
+											</div>
+											<div class="num1">		
+												<span class="num">{{ trend['analyzed']['total_users'] }}</span> <br>
+												<span class="num2"><i class="fa fa-users"></i>  users</span>
+											</div>
+										</div>
+										<div class="numtag">
+											<div class="num-gender"> 
+												<i class="fa fa-male"></i> {{ trend['analyzed']['genders']['male'] }}% males 
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<i class="fa fa-female"></i> {{ trend['analyzed']['genders']['female'] }}% females</div>
+										</div>
+									</div>
+									<div class="col-md-6 pad1">
+										
+										<div id="piechart" ></div>
+										<div class="trending-topic-title2">
+											Sentiment	
+										</div>
+									</div>
+								<!-- <p>Salman Khan: Bollywood actor cleared over hit-and-run - BBC News	</p> -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="left-section-two">
+					<div class="row"> -->
+<!-- 						<div class="col-md-6 left-padding">
+							<div class="trending-videos-section trending-card">
+								<div class="trending-topic-title">
+									People's overall opinion
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<div class="row">
+										<a class="video trending-images" href="http://www.youtube.com/watch?v=o1Y7XhiWUvo">
+											<img src="http://img.youtube.com/vi/o1Y7XhiWUvo/hqdefault.jpg" alt="">
+											<div class="fa fa-play"></div>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<div class="row">
+
+
+										<a class="video trending-images" href="http://www.youtube.com/watch?v=o1Y7XhiWUvo">
+											<img src="http://img.youtube.com/vi/o1Y7XhiWUvo/hqdefault.jpg" alt="">
+											<div class="fa fa-play"></div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 right-padding">
+							<div class="trending-images-section trending-card">
+								<div class="trending-topic-title">
+									People's overall opinion
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<div class="row">
+										<div class="trending-images">
+											<img src="http://img.youtube.com/vi/o1Y7XhiWUvo/hqdefault.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<div class="row">
+										<div class="trending-images">
+											<img src="http://img.youtube.com/vi/o1Y7XhiWUvo/hqdefault.jpg" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> -->
+
+
+
+<!-- 
+
+						
+	
+
+					</div>
+				</div> -->
+
+
+				<div class="left-section-third">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trening-populer-tweet trending-card">
+
+								
+								<div class='tweet-social-tabs social-tab-div'>
+				                 <div class='tweet-tab active social-tab' data='tweet-part3' onclick="showTweets('{{ trend['_id'] }}', 'pop');">   
+				                   <p>Popular Tweets</p>
+				                 </div>
+				                 <div class='tweet-tab social-tab' data='tweet-part1' onclick="showTweets('{{ trend['_id'] }}', 'pos');">   
+				                   <p>Reactions and Opinions</p>
+				                 </div> 
+				                </div>
+
+								<div class="tweet-box-content">
+									<div class="row"> 
+						              <div class="col-md-12">
+						                <div class="pos-tweets"></div>
+						                <div class="neg-tweets"></div>
+						                <div class="pop-tweets"></div>
+						              </div>
+						            
+						            </div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+
+
+			</div>
+			<div class="col-md-4">
+				<div class="second-section">
+
+
+
+					<div class="trending-links trending-card">
+						<div class="trending-topic-title">
+							Trending Buzz ! 
+						</div>
+						<div class="trending-link-section">
+							{% for x in trend['news'] %}
+								{% if loop.index < 8 %}
+								{% if 'image' in x %}
+								<div class="onenews">
+									<a href="{{ x['unescapedUrl'] }}">
+										<div class="row">
+											<div class="col-md-3">
+												<img src="{{ x['image']['tbUrl'] }}" width="80px" height="55px">		
+											</div>
+											<div class="col-md-9">
+												<p class="mokatxt">{{ x['titleNoFormatting']|safe }}</p>
+											</div>
+										</div>
+									</a>
+									<p class="publisher">{{ x['publisher'] }}  </p>
+								</div>
+								{% endif %}
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+
+
+
+					<div class="trending-links trending-card">
+						<div class="trending-topic-title">
+							Trending News on Social Media
+						</div>
+						<div class="trending-link-section">
+							{% for x in trend['analyzed']['websites'] %}
+								<div class="onenews">
+									<a href="{{ x[0] }}">
+										<p class="mokatxt">{{ x[2] }} </p>
+									</a>
+									<!-- <span class="news-tweets">{{ x[0] }}</span> -->
+									<!-- <br>  -->
+									<div class="badgeclass"><span class="badge">{{ x[1] }} shares</span></div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+
+
+
+					<div class="trending-user trending-card">
+						<div class="trending-topic-title">
+							Popular Users
+						</div>
+						<div class="trending-users-img">
+							{% for x in trend['analyzed']['user_details'] %}
+							{% if loop.index < 24 %}
+								<img src="{{ x['lnk'] }}" title="{{ x['name'] }}">					
+							{% endif %}
+
+							{% endfor %}
+						</div>
+					</div>
+
+
+
+					<div class="right-padding">
+							<div class="trending-images-section trending-card">
+								<div class="trending-topic-title">
+									Popular Hashtags
+								</div>
+								{% for ent in trend['analyzed']['hashtags'] %}
+									<div class="row">
+										<div class="col-md-6 ment tags" >#{{ ent[0] }} </div>
+										<div class="col-md-6 mentcount tags"> {{ ent[2] }} mentions</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+
+
+							`
+
+					<div class="right-padding">
+							<div class="trending-images-section trending-card">
+								<div class="trending-topic-title">
+									Top mentions
+								</div>
+								{% for ent in trend['analyzed']['mentions'] %}
+									<div class="row">
+										<div class="col-md-6 ment tags" >@{{ ent[0] }} </div>
+										<div class="col-md-6 mentcount tags"> {{ ent[2] }} mentions</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+
+						
+
+
+
+						<div class="right-padding">
+							<div class="trending-images-section trending-card">
+								<div class="trending-topic-title">
+									 Most tweeted locations
+								</div>
+								{% for ent in trend['analyzed']['cities'] %}
+									<div class="row">
+										<div class="col-md-6 ment tags" >{{ ent['label'] }} </div>
+										<div class="col-md-6 mentcount tags"> {{ ent['value'] }} mentions</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>	
+	{% include 'footer.html' %}
+
+</body>
+</html>
+
+
+
+
+<!-- 
+1. CSS Design 
+2. Image 
+4. Tweets - fix the opinion api
+ -->

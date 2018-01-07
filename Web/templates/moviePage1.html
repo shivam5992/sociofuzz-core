@@ -1,0 +1,741 @@
+{% set meta = movie['meta'] %}
+{% set anal = movie['analyzed'] %}
+
+<!DOCTYPE html>
+<html>
+<head>
+ 	<link rel="shortcut icon" href="/static/sociofuzz-icon.png" type="image/x-icon">
+ 	<link rel="shortcut icon" sizes="57x57" href="/static/sociofuzz-icon.png">
+ 	
+ 	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="{{ meta['wiki']['name'] }} ratings, reviews and analysis from social media. Movie ratings derived by analysing social media, public opinions, public reviews and critics reviews." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="Sociofuzz">
+    <meta property="og:url" content="http://www.sociofuzz.com/movie/{{ movie['_id'] }}">
+    <meta name="og:title" content="{{ meta['wiki']['name'] }} - Ratings, Reviews and Analysis from social media - SocioFuzz">
+    <meta name="og:description" content="{{ meta['wiki']['name'] }} ratings, reviews and analysis from social media. Movie ratings dervived by analysing social media, public opinions, public reviews and critics reviews.">
+    <meta property="og:site_name" content="Sociofuzz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ meta['wiki']['name'] }} - Ratings, Reviews and Analysis from social media - SocioFuzz" />
+    <meta property="og:description" content="{{ meta['wiki']['name'] }} ratings, reviews and analysis from social media. Movie ratings dervived by analysing social media, public opinions, public reviews and critics reviews." />
+    <meta property="og:url" content="http://www.sociofuzz.com/movie/{{ movie['_id'] }}" />
+    <link rel="canonical" href="http://www.sociofuzz.com/movie/{{ movie['_id'] }}" />
+
+	<title> {{ meta['wiki']['name'] }} - Ratings, Reviews and Analysis from social media - SocioFuzz </title>
+	<link rel="stylesheet" href="../static/css/moviepage1.css">
+	<link rel="stylesheet" href="../static/css/elements.css">
+	<link rel="stylesheet/less" href="../static/less/common.less">
+	<script type="text/javascript" src="../static/js/moviepage.js"></script>
+	<script type="text/javascript" src="../static/js/custom.js"></script>
+</head>
+
+{% include 'header.html' %}
+<body class="movie-page-complete" onload="showTweets('{{ movie['name'] }}', 'pop');showIt('image', '{{ movie['name'] }}', 1)">
+	<div class="container-fluid movie-data-section">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 movie-data-section-child">
+				<div class="movies-page-data">
+
+					<!-- LEFT META DATA -->
+					<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 movie-data-section-1">
+						<div class="poster-image-section">
+							{% if 'wikiimg' in movie %}
+							{% if movie['wikiimg'][0] != None %}
+							<div class="row poster-image">
+							<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['wikiimg'][0]  }}" >
+							</div>
+							{% else %}
+							<div class="row poster-image">
+							<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+							</div>
+							{% endif %}
+							{% else %}
+							<div class="row poster-image">
+							<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+							</div>
+							{% endif %}
+							<div class="card-rating">{{ movie['rank']|round(1) }}</div>
+						</div>
+
+						{% set video = meta['buff']['trailer'] %}
+						{% if video != None %}
+						<a class="video movies-trailer" href="{{ video['video_link'] }}">
+							<div class="trailered">
+								<p class="movies-title tail-p"><i class="fa fa-play"></i> Watch Trailer</p>
+							</div>
+						</a>
+						{% endif %}
+
+						<div class="row poster-detail">
+							{% if meta['wiki']['name'] %}
+							<div class="movie-title">
+								<h1 class="main-movie-title">{{ meta['wiki']['name'] }}</h1>
+								{% if movie['new_date'] != "None" %}
+									<p><i class="fa fa-calendar-check-o"></i> {{ movie['new_date'] }}  </p>
+								{% endif %}
+								{% if movie['new_time'] != "None" %}
+									<p><i class="fa fa-clock-o"></i> {{ movie['new_time'] }} </p>
+								{% endif %}
+									<p><i class="fa fa-book"></i> {{ meta['buff']['genre'].replace("[1]","").replace("[2]","")|safe }}  </p>
+								{% if meta['wiki']['Directed by'] %}
+									<p><i class="fa fa-user"></i> Director: {{ meta['wiki']['Directed by'].replace("[1]","").replace("[2]","")|safe }} </p>
+								{% endif %}
+							</div>
+							{% endif %}
+							{% if meta['summary_data'] %}
+							<div class="movie-sub-title">
+								<p class="summary_data"> {{ meta['summary_data'] }}</p>
+							</div>
+							{% else %}
+							<div class="movie-sub-title">
+								<p class="summary_data"> {{ meta['buff']['description'] }}</p>
+							</div>
+							{% endif %}            
+						</div>
+
+						{% if movie['actsimg'] %}
+						<div class="starring-section mobile-starring">
+							<div class="row left-sction">
+								<p class="movies-title">Star Cast</p>    
+								{% for actor, imgl in movie['actsimg'].iteritems() %}
+								<p class="actor-image" data-toggle="tooltip" title="{{ actor.replace("_"," ").strip().replace("[1]","").replace("[2]","")|safe }}">
+									{% if imgl.startswith('../static/images') %}
+										<img alt="Actor Image" src="../static/images/null.jpg">
+									{% else %}
+									{% if imgl.startswith('data:') %}
+										<img alt="Actor Image" src="{{ imgl }}">
+									{% else %}
+									{% if imgl|length != 0 %}
+										<img alt="Actor Image" src="data:image/jpeg;base64,{{ imgl }}">
+									{% else %}
+										<img alt="Actor Image" src="../static/images/null.jpg">
+									{% endif %}
+									{% endif %}
+									{% endif %}
+								</p>
+								{% endfor %}
+							</div>
+						</div>
+						{% endif %}
+					</div>
+					<!-- LEFT SECTION ENDS -->
+
+					<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 movie-data-section-2">
+							<section>
+
+								<!-- <div class="row">  -->
+									<!-- <div class='col-md-12'> -->
+										<!-- <div class="row-card"> -->
+											<!-- <span class="tab-class active" data='social-part1'> <i class="fa fa-star-half-o"></i></i> Ratings </span> -->
+											<!-- <span class="tab-class active" data='social-part2'> <i class="fa fa-twitch"></i></i> Social </span> -->
+											<!-- <span class="tab-class active" data='social-part3'> <i class="fa fa-newspaper-o"></i> News </span> -->
+											<!-- <span class="tab-class active" data='social-part4'> <i class='fa fa-music'></i> Music </span> -->
+											<!-- <span class="tab-class active" data='social-part4'> <i class='fa fa-music'></i> Trivias </span> -->
+											<!-- <span class="tab-class active" data='social-part5'> <i class="fa fa-star-half-o"></i></i> Box Office </span> -->
+										<!-- </div> -->
+									<!-- </div> -->
+								<!-- </div> -->
+
+								<div class="tabs tabs-style-bar">
+									<div class="tabrow">		
+										<div class="nav-tab active" data="part1"><span><i class="fa fa-star-half-o"></i></i> Ratings </span></div>
+										<div class="nav-tab" data="part2" onclick="showUsers('{{ movie['name'] }}','40');"><span><i class="fa fa-twitch"></i></i> Social </span></div>
+										<div class="nav-tab" data="part4" onclick="showIt('news','{{ movie['name'] }}',1);"><span><i class="fa fa-newspaper-o"></i> News </span></div>
+										<div class="nav-tab" data="part6"><span><i class='fa fa-music'></i> Music </span></div>
+										<div class="nav-tab" data="part7"><span><i class="fa fa-star-half-o"></i></i> Trivia </span></div>
+										{% if showTime == 'True' %}
+										<div class="nav-tab" data="part5"><span><i class="fa fa-calendar"></i></i> Showtimes </span></div>
+											<!-- <div class="nav-tab nav-tab-movie" data="part5"> -->
+												<!-- <span><i class='fa fa-calendar'></i> Showtimes in your city </span> -->
+											<!-- </div> -->
+										{% endif %}
+										{% if movie['boxoffice'] != None  %}
+										<div class="nav-tab" data="part8"><span><i class="fa fa-star-half-o"></i></i> Box Office </span></div>
+										{% endif %}
+									</div> 
+								</div>
+							</section>
+
+							<section class="part1 part">
+								<div class='row-card'>
+									<div class="row city-row">
+										<div class="col-md-5 stats-top5">
+											<span class='start-text movie-rating-score-value' data-toggle="tooltip" title="{{ movie['rank']|round(1) }} out of 10">{{ movie['rank']|round(1) }}</span>
+											<div class="movie-rating-fivestar">
+												<div class="start-stars">
+													<div class="movie-rating-box" >
+														{{ movie['stars'][0]|safe }}
+													</div>
+												</div>
+												<div class='start-label-0' data-toggle="tooltip" title="As per social media analysis, this movie is {{ movie['stars'][1] }}">{{ movie['stars'][1] }}</div>
+											</div>
+										</div>
+										<div class="col-md-4 stats-top">
+											<div class="movie-rating-sub-section">
+												<div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr" data-toggle="tooltip" title="{{ anal['total_tweets'] }} tweets from {{ anal['total_users'] }} users since movie's release">
+													{{ anal['total_tweets'] }}
+												</div>
+												<div class="col-md-9 col-sm-9 col-xs-9 start-label-small"> <i class="fa fa-twitter"></i> tweets</div>
+											</div>
+											<div class="movie-rating-sub-section">
+												<div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr" data-toggle="tooltip" 
+												title="{{ anal['sentiment']['positive'] }}% positive tweets, {{ anal['sentiment']['negative'] }}% negative tweets, rest neutral">{{ anal['total_users'] }}</div>
+												<div class="col-md-9 col-sm-9 col-xs-9 start-label-small"><i class="fa fa-user"></i> users</div>
+											</div>
+											<div class="movie-rating-sub-section">
+												<div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr" data-toggle="tooltip" 
+												title="Reviews from {{ movie['reviews_data']|length }} critics on Sociofuzz">{{ movie['reviews_count_int'] }}
+											</div>
+											<div class="col-md-9 col-sm-9 col-xs-9 start-label-small"> <i class="fa fa-users"></i> critics</div>
+										</div>
+									</div>
+									<div class="col-md-3 stats-top10">
+										<div class="social-progress">
+											<div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="{{ anal['sentiment']['positive'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal['sentiment']['positive'] }}%" data-toggle="tooltip" title="{{ anal['sentiment']['positive'] }}% positive">
+											</div> 
+										</div> <div class="rod"> positive </div>
+										<div class="social-progress">
+											<div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="{{ anal['sentiment']['negative'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal['sentiment']['negative'] }}%" data-toggle="tooltip" title="{{ anal['sentiment']['negative'] }}% negative">
+											</div> 
+										</div> <div class="rod"> negative </div>
+										<div class="social-progress">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ anal['sentiment']['neutral'] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ anal['sentiment']['neutral'] }}%" data-toggle="tooltip" title="{{ anal['sentiment']['neutral'] }}% Neutral">  
+											</div> 
+										</div> <div class="rod"> neutral </div>
+										<br>
+										<div class="start-label-vsmall">Social Sentiment</div>
+									</div>
+								</div>
+							</div>  
+							<div class="row"> 
+								<div class='col-md-12'>
+									<div class="row-card">
+										<span class="tab-class active" data='social-part1' onclick="showTweets('{{ movie['name'] }}', 'pop');">
+											Popular Tweets
+										</span>
+										<span class="tab-class" data='social-part2' onclick="showTweets('{{ movie['name'] }}', 'pos');"> 
+											<span class="home-pos"> 
+												Positive Tweets ({{ anal['sentiment']['positive'] }}%)
+											</span>
+										</span>
+										<span class="tab-class" data='social-part3' onclick="showTweets('{{ movie['name'] }}', 'neg');"> 
+											<span class="home-neg"> 
+												Negative Tweets ({{ anal['sentiment']['negative'] }}%)
+											</span>
+										</span>
+										<span class="tab-class" data="social-part4" onclick="showTweets('{{ movie['name'] }}', 'reviews');"> 
+											<span class="home-rev"> 
+												Critic Reviews ({{ movie['reviews_count_int'] }})
+											</span>
+										</span>
+									</div>  
+								</div>
+								<div class="col-md-12">
+									<div class="pos-tweets"></div>
+									<div class="neg-tweets"></div>
+									<div class="pop-tweets"></div>
+									<div class="pagination-reviews" id="pagination-reviews"></div>
+									<div class="ajaxloader-tweets" style="display:none;text-align:center">
+										<img src="../static/images/loader.gif" alt="Loader">
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="part2 part">
+							
+							<div class="row">
+								<div class='col-md-6'>
+									<div class='row-card'>
+										<div class="head-label-3">
+											<div class="movies-title"><i>Top trending hashtags</i></div>
+										</div>
+										{% for hashtag in anal['hashtags'] %}
+										<div class="row city-row">
+											<div class="col-md-6 col-sm-6 col-xs-6 hashtag-text mokatxt hvr">
+												#{{ hashtag[0] }}
+											</div> 
+											<div class="col-md-6 col-sm-2 col-xs-2">
+												<div class="progress">
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ hashtag[1] }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ hashtag[1] }}%" data-toggle="tooltip" title="{{ hashtag[2] }} mentions">
+													</div> <span class="ment-text">{{ hashtag[1] }}%</span>
+												</div>  
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class='col-md-6'>
+									<div class='row-card'>
+										<div class="head-label-3">
+											<div class="movies-title"><i>Top twitter mentions</i></div>
+										</div>
+										{% for mention in anal['mentions'] %}
+										<div class="row city-row">
+											<div class="col-md-6 col-sm-6 col-xs-6 hashtag-text mokatxt">
+												<a href="http://www.twitter.com/{{ mention[0] }}" target="_blank" data-toggle="tooltip" title="view profile">@{{ mention[0] }}</a>
+											</div> 
+											<div class="col-md-6 col-sm-2 col-xs-2">
+												<div class="progress">
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: {{ mention[1] }}%" data-toggle="tooltip" title="{{ mention[2] }} mentions">
+													</div> <span class="ment-text">{{ mention[1] }}%</span>
+												</div>  
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="row top-shared-link">
+								<div class='col-md-12'>
+									<div class="row-card">
+										<div class="head-label-3">
+											<div class="movies-title"><i>News from social Media</i></div>
+										</div>
+										{% for url in anal['websites'] %}
+										<div class="row link-row">
+											<div class="col-md-10 col-xs-8 col-sm-4 mokatxt">
+												<a href="http://{{ url[0] }}" target="_blank" data-toggle="title" title="Source: {{ url[0].split("/")[0] }}">
+													<p>{{ url[2]|safe }}</p>
+												</a>
+											</div>
+											<div class="col-md-2 col-xs-4 col-sm-4">
+												<span class="badge" data-toggle="tooltip">{{ url[1] }} shares</span>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class='col-md-6'>
+									<div class='row-card'>
+										<div class="head-label-3"><div class="movies-title"><i>Websites talking about the movie</i></div></div>
+										{% for url in anal['links'] %}
+										{% if loop.index < 7 %}
+										<div class="row link-row">
+											<div class="col-md-10 col-sm-9 col-xs-9 mokatxt">
+												<a href="http://{{ url[0] }}" target="_blank">{{ url[0] }}</a>
+											</div>
+											<div class="col-md-2 col-sm-3 col-xs-3">
+												<span class="badge">{{ url[1] }}</span>
+											</div>
+										</div>
+										{% endif %}
+										{% endfor %}
+										<br>
+										<div class='location-text'>
+											<div class="number-digit hvr">{{ anal['links_length'] }}</div>
+											<div class="number-text">different sources, where movie related articles are shared across social media</div>
+										</div>
+									</div>  
+								</div>
+								<div class='col-md-6'>
+									<div class='row-card city-pie-chart'>
+										<div class='location-text'>
+											<div class="number-digit hvr">{{ anal['cities_count'] }}</div>
+											<div class="number-text1">total numer of Indian cities, from where people are tweeting about this movie</div>
+										</div>
+										<br>
+										{% for city in anal['city_per'] %}
+										<div class="row city-row">
+											<div class="col-md-4 col-sm-4 col-xs-4 hashtag-text">
+												{{ city[0] }}
+											</div> 
+											<div class="col-md-8 col-sm-8 col-xs-8">
+												<div class="progress">
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: {{ city[2] * 100 }}%">
+													</div> 
+													<span class="ment-text">{{ city[2] * 100 }}%</span>
+												</div>  
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="row gender-card-section">
+								<div class='col-md-12'>
+									<div class="row-card"> 
+										<div class='row'> 
+											<div class="col-md-6 gender-card-box">
+												<div class="row">
+													<div class="col-md-2 col-sm-2 col-xs-2 gender-digit hvr">{{ anal['genders']['female'] }}</div>
+													<div class="col-md-8 col-sm-8 col-xs-8 gender-text">"Female Audience" percentage who tweeted about the movie
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2 gender-icon hvr"><i class="fa fa-female"></i></div>
+												</div>
+											</div>
+											<div class="col-md-6 gender-card-box">
+												<div class="row">
+													<div class="col-md-2 col-sm-2 col-xs-2 gender-icon hvr"><i class="fa fa-male"></i></div>
+													<div class="col-md-8 col-sm-8 col-xs-8 gender-text-r">"Male Audience" percentage who tweeted about the movie
+													</div>
+													<div class="col-md-2 col-sm-2 col-xs-2 gender-digit-r hvr">{{ anal['genders']['male'] }}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row influencex">
+								<div class='col-md-12'>
+									<div class="row-card influencer-head">
+										<div class="col-md-6">
+											<div class="head-label-3">
+												<div class="movies-title"><i>Influential users</i></div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="head-label-3">
+												<div class="movies-title"><i>Popular users</i></div>
+											</div>
+										</div>
+										<div class="influencers">
+											<div class="influencers-ajax col-md-6"></div>
+											<div class="image-collage col-md-6">
+												<p>Popular Users</p>
+											</div> 
+										</div>
+									</div>
+								</div>
+							</div>  
+
+							<div class="row">
+								<div class='col-md-12'>
+									<div class='row-card'>
+										<div class="head-label-3">
+											<div class="movies-title">&nbsp;&nbsp;&nbsp;<i>Social Gallery - Photos shared on social media</i></div>
+										</div>
+										<div class="Collage1 effect-parent1">
+											<div id="pagination-image"></div>
+											
+											<div class="loadmore" onclick="showIt('image', '{{ movie['name'] }}', 1)"><i class="fa fa-refresh"></i> <br> More</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</section>
+
+						<section class="part4 part">
+							<div class="row">
+								<div class="col-md-12">
+									<div class='row-card'>
+										<p>Buzz around {{ movie['meta']['wiki']['name'] }} across the web (news, articles and blogs) </p>
+									</div>
+								</div>
+							</div> 
+							<div class="row">
+								<div class="col-md-12">
+									<div class='row-card'>
+										<div class="pagination-news" id="pagination-news"></div>
+									</div>
+								</div>
+							</div> 
+						</section>
+
+						<section class="part6 part">
+							<div class="row">
+								<div class="col-md-12">
+
+									{% for song in meta['buff']['tracks'] %}
+
+									{% if 'Juke Box' not in song['track_name'] %}
+									<div class="music-section-data">
+										<div class='row-card'>
+											<div class='music-box-section row'>
+												<div class="lyrics-details col-md-8">
+													<span class="news-title-text song-name">{{ song['track_name'] }}</span>  
+													<div class='news-source'> 
+														{% if 'Playback Singer' in song %}
+														<i class="fa fa-headphones"></i> Singer(s) <a href="#"> 
+														{{ song['Playback Singer'] }}</a><br>
+														{% endif %}
+														{% if 'Music Director' in song %}
+														<i class="fa fa-music"></i> Music <a href="#"> {{ song['Music Director'] }}</a><br>
+														{% endif %}
+														{% if song['Lyricist'] %}
+														<i class="fa fa-align-right"></i> Lyrics <a href="#"> {{ song['Lyricist'] }}</a><br>
+														{% endif %}
+														<i class="fa fa-volume-up"></i> Track Length: <a href="#">{{ song['duration'].split(":")[0] }} Minutes, {{ song['duration'].split(":")[1] }} Seconds</a>
+													</div>
+													{% if 'lyrics' in song %}
+													<div class="lyrics-button">
+														<a href="#" class="button-default">
+															Show Lyrics
+														</a>
+													</div>
+													<br>
+													{% endif %}
+												</div>
+												<div class="col-md-4">
+													{% if 'video' in song %}
+													<a class="video song-images" href="{{ song['video'] }}">
+														<img src="http://img.youtube.com/vi/{{ song['video'].split('watch?v=')[1] }}/0.jpg" alt="Video Song" />
+														<i class="fa fa-play music-play-icon"></i>
+													</a>
+													{% endif %}
+												</div>
+												{% if 'lyrics' in song %}
+												<div class="lyrics-section">
+													<div class="lyrics-box">
+														<div class="lyrics-text">
+															{{ song['lyrics'].replace("\n","<br>")|safe }}
+														</div>
+													</div>
+												</div>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+									{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+
+
+						</section>
+
+						<section class="part5 part">
+							<div class="row search-form">
+								<form id="add-variants-form" name="showtime" method="POST" action="/searchTimes">
+									<div class="col-md-2 col-sm-1"></div>
+									<div class="col-md-6 col-sm-6 col-xs-8">
+										<div class="row">
+											<input placeholder="Enter your city name" name="city" class="awesomplete" data-list="{{ cities }}" >
+										</div>
+									</div>
+									<input type="hidden" name="moviename" value="{{ movie['name'] }}">
+									<div class="col-md-3 col-sm-4 col-xs-4 chipped">
+										<div class="row">
+											<input type="submit" value="Find Theaters" class="button-default-chipped">
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="row ajaxloader_class">
+								<div class="ajaxloader" style="display:none">
+									<img src="../static/images/loader.gif" alt="Loader">
+								</div>
+							</div>
+							<div id="mapLoaded"></div><br>
+							<div class="dataloaded"></div>
+						</section>
+
+						<section class="part7 part">
+							<div class="row">
+								<div class="col-md-12">
+									<div class='row-card'>
+										<div class="head-label-5">
+											<div class="movies-title">
+												Trivas / Fun Facts / Goofs
+												<div class="totrv">({{meta['trivias']|length}} total)</div>
+											</div>
+										</div>
+										{% for trivia in meta['trivias'] %}
+										<div class='quote-section-one'> 
+											<div class="quote-heading">
+												<span class='news-title-text'>{{ trivia }}</span>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="part8 part">
+							{% if movie['boxoffice'] != None  %}
+							<div class="row">
+								<div class="col-md-12">
+									<div class='row-card'>
+										<div class="head-label-5">
+											<div class="movies-title">
+												<span class="totcol">&#8377; {{ movie['boxoffice']['collection_fix'] }}</span>
+												<div class="totbox">{{ movie['boxoffice']['club'] }} Crore Club</div>
+											</div>
+										</div>
+										<br><br>
+										<p><i>"{{ meta['wiki']['name'] }}"</i> was screened in <span>{{ movie['boxoffice']['Screens'] }} cinemas</span> worldwide. 
+											The movie collected a total of <span>&#8377; {{ movie['boxoffice']['Total Nett Gross'] }}</span>. The most popular cities with respect to social media geographical buzz were: {% for city in anal['cities'] %} <span>{{ city['label'] }}</span> ({{ city['value'] }} tweets) ,  {% endfor %}
+										</p>
+									</div>
+								</div>
+							</div>  
+							<div class="row">
+								<div class="col-md-12">
+									<div class='row-card'>
+										<div class='quote-section-one'> 
+											<div class="quote-heading">
+												<p>Total Collection: <span>&#8377; {{ movie['boxoffice']['Total Nett Gross'] }}</span></p>
+												<p>Total Budget:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8377; {{ movie['boxoffice']['Budget'] }}</span></p>
+											</div>
+										</div>
+										<div class='quote-section-one'> 
+											<div class="quote-heading">
+												<span class='news-title-text'>
+													<p>First Day:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8377; {{ movie['boxoffice']['day_fix'][0] }} {{ movie['boxoffice']['day_fix'][1] }} </p>
+													<p>The movie's first day collection are better than <span>{{ movie['boxoffice']['betterday'] }}%</span> other movies since 2014 with total collection of &#8377; {{ movie['boxoffice']['day_fix'][0] }} {{ movie['boxoffice']['day_fix'][1] }} on the releasing day.</p>
+												</span>
+											</div>
+										</div>
+										<div class='quote-section-one'> 
+											<div class="quote-heading">
+												<span class='news-title-text'>
+													<p>First Weekend:&nbsp; &#8377; {{ movie['boxoffice']['weekend_fix'][0] }} {{ movie['boxoffice']['weekend_fix'][1] }} </p>
+													<p>The movie total collection in the first weekend was &#8377; {{ movie['boxoffice']['weekend_fix'][0] }} {{ movie['boxoffice']['weekend_fix'][1] }}, which is better than <span>{{ movie['boxoffice']['betterweekend'] }}%</span> other movies since 2014.</p>  
+												</span>
+											</div>
+										</div>
+										<div class='quote-section-one'> 
+											<div class="quote-heading">
+												<span class='news-title-text'>
+													<p>First Week:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8377; {{ movie['boxoffice']['week_fix'][0] }} {{ movie['boxoffice']['week_fix'][1] }} </p>
+													<p>The movie's first week collection are better than <span>{{ movie['boxoffice']['betterweek'] }}%</span> other movies since 2014 and the total collection is &#8377; {{ movie['boxoffice']['week_fix'][0] }} {{ movie['boxoffice']['week_fix'][1] }} in the first week.</p>  
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endif %}
+						</section>
+
+					</div>
+					<!-- Movies Page Middle Section Code End-->
+
+					<!-- Movies page right section -->
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 movie-data-section-3">
+						
+						<div class="movies-trailer-section1">
+							<div class="row left-section fblike">
+							</div>
+						</div>
+						<div class="movies-trailer-section1">
+							<div class="row left-section">
+								<div class="movies-app">
+									<a href="https://play.google.com/store/apps/details?id=com.sociofuzz.movies" target="_blank">
+										<!-- <img src="../static/images/app.jpg"> -->
+										<img alt="Playstore Link" src="data:image/jpeg;base64,{{ playstore }}" >
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="movies-trailer-section">
+							<div class="row left-section">
+								<p class="movies-title">Trending movies</p>
+								<div class="movies-update-movie">
+									{% for x in upcoming %}
+									{% for movie in x['projection'] %} 
+									<a href="/movie/{{ movie['uname'] }}">
+										{% if  movie['wikiimg'][0] != None %}
+										<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['wikiimg'][0]  }}" >
+										{% else %}
+										<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+										{% endif %}
+									</a>
+									{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="movies-trailer-section1">
+							<div class="row left-section">
+								<p class="movies-title">Popular movies</p>
+								<div class="movies-update-movie">
+									{% for x in alltime %}
+									{% for movie in x['projection'] %} 
+									<a href="/movie/{{ movie['uname'] }}">
+										{% if  movie['wikiimg'][0] != None %}
+										<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['wikiimg'][0]  }}" >
+										{% else %}
+										<img alt="Poster Movie" src="data:image/jpeg;base64,{{ movie['buffimg'][0]  }}" >
+										{% endif %}
+									</a>
+									{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+
+						<!--  Blog Posts -->
+						<div class="movies-trailer-section1">
+							<div class="row left-section">
+								<br>	
+								<p class="movies-title">Latest Posts</p>
+								<div class="movies-update-movie">
+									{% for post in posts[:4] %}
+										<a href="../blogs/{{ post['link'] }}">
+                                			<span class="rel-text">{{ post['title'] }}</span>
+                            			</a>
+                            			<br>
+                            			<span class="rel-date">{{ post['PostedOn'] }}</span>
+                            			<br><br>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Movies page right section code end -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{% include 'footer.html' %}
+	</html>
+
+<script>
+$('#add-variants-form').submit(function(){
+  $('.ajaxloader').show()
+  $('.dataloaded').html("");
+  $('#mapLoaded').html("");
+
+  $.ajax({
+    url: '/searchTimes',
+    type: 'POST',
+    dataType: 'html',
+    data: $(this).serialize(),
+    success: function(newContent){
+      $('.ajaxloader').hide()
+      newContent = JSON.parse(newContent);
+      $('.dataloaded').html("");
+      if ( newContent.data[0] != -1 )
+      { 
+        $('.dataloaded').html(newContent.data[0]);
+      }
+      else
+      {
+        $('.dataloaded').html('<div class="row-card"><p>No Data Found</p></div>');
+      }
+      $('#mapLoaded').html("");
+      if ( newContent.data[1]  != -1  && newContent.data[1].length > 0)
+      {
+        $('#mapLoaded').html('<div class="row-card"><div id="map" style="width: 100%; height: 350px"></div></div>');
+        var dat = newContent.data[1][1];
+        var map = L.map('map').setView([parseFloat(dat[0]), parseFloat(dat[1])], 12);
+        L.Icon.Default.imagePath = '../static/js/images/';
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+        maxZoom: 18,
+        id: 'mapbox.streets'
+        }).addTo(map);
+        for (var x in newContent.data[1]) 
+        {
+        var xx = newContent.data[1][x];
+        L.marker([parseFloat(xx[0]), parseFloat(xx[1])]).addTo(map).bindPopup(xx[2]);
+        }
+        var popup = L.popup();
+        }
+        }
+      });
+  return false;
+});
+</script>

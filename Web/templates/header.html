@@ -1,0 +1,28 @@
+<nav id="header" class="navbar navbar-fixed-top navbar-active-inactive">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="fa fa-bars"></span>
+			</button>
+			<a class="navbar-brand" href="/"><img class="logo" alt="Sociofuzz Logo" src = "../static/images/logo.png">SocioFuzz</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse navbar-right">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog" target="_blank">Blog</a></li>
+				<li><a href="/movies">Movies</a></li>
+				<li><a href="/about">About</a></li>
+				<li class="movie-search"><i class="fa fa-search"></i><input class="tags" type="text" placeholder="Search Movie"></li>
+				{% if not session.logged_in %}
+				<li><a href="/facebook_login"><img src="../static/images/lin.png" width="60" alt="Login"></a></li>
+				{% else %}
+				<li class="logoutli">
+					<img src="{{ session['image'] }}" width="28px" title="logged in as {{ session.name }}" alt="User">
+					<a href="/logout"><img src="../static/images/logout.png" width="70" height="24" alt="Logout"></a>
+				</li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav>

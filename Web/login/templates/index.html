@@ -1,0 +1,26 @@
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1526470804243594',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<ul class="nav pull-right">
+    {% if not session.logged_in %}
+    <li><a href="/facebook_login">   <img src="static/images/lin.png">   </a></li>
+    {% else %}
+    <li><a href="/logout">  <img src="static/images/logout.png">  </a></li>
+    {% endif %}
+</ul>

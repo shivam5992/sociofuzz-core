@@ -1,0 +1,200 @@
+                <div class='row-card'>
+                <div class="row city-row review-stat">
+                  <div class="col-sm-1">
+                  </div>
+                  <div class="col-sm-2">
+                    <span class='start-text movie-rating-score-value'>
+                      {{ movie['critic']['average']|round(1) }}
+                    </span>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="review_hour"></div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="movie-rating-sub-section">
+                      <div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr">
+                        {{ movie['critic']['total'] }}
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 start-label-small">
+                        <i class="fa fa-users"></i> critics
+                      </div>
+                    </div>
+                    <div class="movie-rating-sub-section">
+                      <div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr">{{ movie['critic']['pos'] }}</div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 start-label-small"><i class="fa fa-smile-o"></i> positive</div>
+                    </div>
+                    <div class="movie-rating-sub-section">
+                      <div class="col-md-3 col-sm-3 col-xs-3 start-label-smallr">
+                        {{ movie['critic']['neg'] }} </b>
+                      </div>
+                      <div class="col-md-9 col-sm-9 col-xs-9 start-label-small"> 
+                        <i class="fa fa-frown-o"></i> negative
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>  
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="part8 part">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class='row-card'>
+        <div class="head-label-5">
+          <div class="movies-title">
+           <span class="totcol">&#8377; {{ movie['boxoffice']['collection_fix'] }}</span>
+            <div class="totbox">{{ movie['boxoffice']['club'] }} Crore Club</div>
+          </div>
+        </div>
+        <br><br>
+        <p><i>"{{ meta['wiki']['name'] }}"</i> was screened in {{ movie['boxoffice']['Screens'] }} cinemas worldwide. 
+          The movie collected a total of <b>&#8377; {{ movie['boxoffice']['Total Nett Gross'] }}</b>. The most popular cities with respect to social media geographical buzz were: {% for city in anal['cities'] %} <b>{{ city['label'] }}</b> ({{ city['value'] }} tweets) ,  {% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>  
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class='row-card'>
+        
+       
+
+        <div class='quote-section-one'> 
+          <div class="quote-heading">
+            <p>Total Collection: <b>&#8377; {{ movie['boxoffice']['Total Nett Gross'] }}</b></p>
+            <p>Total Budget:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>&#8377; {{ movie['boxoffice']['Budget'] }}</b></p>
+          </div>
+        </div>
+
+
+
+        <div class='quote-section-one'> 
+          <div class="quote-heading">
+              <span class='news-title-text'>
+                <p>First Day:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8377; {{ movie['boxoffice']['day_fix'][0] }} {{ movie['boxoffice']['day_fix'][1] }} </p>
+                <p>The movie's First Day collection are better than 45% other movies since 2014, the movie collected total {{ movie['boxoffice']['First Day'] }} on first day of its release.</p>
+              </span>
+          </div>
+        </div>
+
+
+
+         <div class='quote-section-one'> 
+          <div class="quote-heading">
+              <span class='news-title-text'>
+                <p>First Weekend:&nbsp; &#8377; {{ movie['boxoffice']['weekend_fix'][0] }} {{ movie['boxoffice']['weekend_fix'][1] }} </p>
+                <p>The movie's First Weekend collection are better than 45% other movies since 2014, the movie collected total {{ movie['boxoffice']['First Weekend'] }} on first Weekend of its release.</p>  
+              </span>
+          </div>
+        </div>
+
+
+        <div class='quote-section-one'> 
+          <div class="quote-heading">
+              <span class='news-title-text'>
+                <p>First Week:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8377; {{ movie['boxoffice']['week_fix'][0] }} {{ movie['boxoffice']['week_fix'][1] }} </p>
+                <p>The movie's First Week collection are better than 45% other movies since 2014, the movie collected total {{ movie['boxoffice']['First Week'] }} on first Week of its release.</p>  
+              </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ var marginrv = {top: 0, right: 0, bottom: 0, left: 30},
+    widthrv = 300,
+    heightrv = 100;
+    var formatPercent = d3.format(".0%");
+    var xrv = d3.scale.ordinal()
+    .rangeRoundBands([0, widthrv], .1);
+    var yrv = d3.scale.linear()
+    .range([heightrv, 0]);
+    var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return "<div class='letter'>" + d.letter + "</div><div class='letter-val'>" +  d.frequency + " Tweets</div>";
+    })
+    var svgrv = d3.select(".review_hour").append("svg")
+    .attr("width", widthrv + marginrv.left + marginrv.right)
+    .attr("height", heightrv + marginrv.top + marginrv.bottom)
+    .append("g")
+    .attr("transform", "translate(" + marginrv.left + "," + marginrv.top + ")");
+    var datarv = "{{ movie['critic']['calls']|safe }}".replace(/u'/g,"'").replace(/'/g,'"')
+    datarv = JSON.parse(datarv)
+    xrv.domain(datarv.map(function(d) { return d.date; }));
+    yrv.domain([0, d3.max(datarv, function(d) { return d.frequency; })]);
+
+    svgrv.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + heightrv + ")")
+
+    svgrv.append("g")
+    .attr("class", "y axis")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .text("Frequency");
+
+    svgrv.selectAll(".bar")
+    .data(datarv)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d, i) { return i*=27; })
+    .attr("width", 10)
+    .attr("y", function(d) { return yrv(d.frequency); })
+    .attr("height", function(d) { return heightrv - yrv(d.frequency); })
+    .style('margin-left', '0px')
+    .on('mouseover', function(d, i) { return showbrrv(d, i); })
+    .on('mouseout', function() { return hidebrrv(); })
+    function type(d) {
+      d.frequency = +d.frequency;
+      return d;
+    }
+    var div4 = d3.select('.review-stat').append('div').attr('class','tooltp').style('opacity',0);
+    function showbrrv(obj, i)
+    {
+      var val = obj.frequency;
+      var day = obj.letter;
+      var cx=i*=27;
+      var cy = yrv(obj.frequency);
+      div4.transition().duration(200).style('opacity',.9)
+      div4.html("<div><div class='letter'>Rating: " + day + "</div><div class='letter-val'>" + val  +  " critics</div></div>")
+     .style("margin-left",   (parseInt(cx, 10)+10) + "px")     
+     .style("margin-top", (parseInt(cy,10)-20) + "px");
+    }
+    function hidebrrv(obj)
+    {
+    div4.transition().duration(500).style("opacity", 0)
+    }

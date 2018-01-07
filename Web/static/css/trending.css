@@ -1,0 +1,259 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+body
+{
+	font-family: 'Roboto', sans-serif;
+}
+.trending-topics
+{
+	display: inline-block;
+    width: 100%;
+    background: url("http://www.sociofuzz.com/static/images/background.png");
+    padding-bottom: 15px;
+    margin-top: 70px;
+    padding-top: 15px;
+}
+.left-image-section img
+{
+    width: 100%;
+}
+.trending-card
+{
+	padding: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+    background: white;
+}
+.trending-topic-title
+{
+	font-weight: 500;
+    font-size: 15px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+}
+.trending-topic-title1
+{
+    font-weight: 300;
+    font-size: 30px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+}
+.trending-topic-title2
+{
+   font-weight: 300;
+    font-size: 15px;
+    padding-left: 75px;
+    margin-top: -20px;
+}
+.left-section-two, .left-section-third
+{
+	margin-top: 15px;
+}
+.trending-images img
+{
+	width: 100%;
+}
+.trending-images
+{
+	padding: 0px 7.5px;
+    padding-bottom: 15px;
+    width: 100%;
+    display: inline-block;
+}
+.left-padding
+{
+	padding-right: 7.5px;
+}
+/*.right-padding
+{
+	padding-left: 7.5px;
+}*/
+.tweet-tab
+{
+	margin: 1em;
+    padding: 5px 20px;
+    border: none;
+    background: none;
+    color: inherit;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    background: white;
+}
+.tweet-tab.active
+{
+	background: #9eafb5;
+    color: white;
+}
+.tweet-tab p
+{
+	margin-bottom: 0px;
+}
+
+.tweet-box-content
+{
+	    border-bottom: 1px solid #f5f5f1;
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.tweet-box-detail {
+    display: inline-block;
+}
+.tweet-box-name {
+    font-size: 15px;
+    font-weight: 300;
+}
+.tweet-box-handle {
+    display: inline-block;
+    color: gray;
+    font-size: 12px;
+}
+.tweet-box-date {
+    display: inline-block;
+    color: gray;
+    margin-left: 10px;
+        font-size: 12px;
+}
+.tweet-box-bottom {
+    clear: both;
+    padding-top: 5px;
+}
+.tweet-box-text1 {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.tweet-box-icons
+{
+    display: none;
+}
+
+
+
+
+
+/**/
+
+.mentcount
+{
+    text-align: left;
+}
+.ment 
+{
+    text-align: right;
+}
+.tags 
+{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+
+
+
+
+/**/
+.trending-users-img img 
+{
+    padding: 2px;
+}
+
+
+
+
+
+
+.trending-link-section 
+{
+
+}
+
+
+.onenews
+{
+    margin-bottom: 25px;
+}
+
+.news-tweets
+{
+    font-size: 12px;
+}
+.badgeclass
+{
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+}
+
+
+
+.num 
+{
+    font-size: 35px;
+    font-weight: 300;
+    /*margin-right: 50px;*/
+    /*margin-left: 10px;*/
+}
+
+.num1 
+{
+    display: inline-block;
+    float: left;
+}
+.num2
+{
+    /*font-size: 35px;*/
+    font-weight: 300;
+    margin-right: 50px;
+    margin-left: 20px;
+}
+.num3
+{
+    font-size: 22px;
+    padding: 20px;
+    margin-top: 10px;
+    /*position: absolute;*/
+}
+.num-gender
+{
+        text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 80px;
+    /*position: absolute;*/
+    margin-left: 20px;
+}
+
+.pad0
+{
+        padding-left: 15px;
+    padding-top: 15px;
+    text-align: center
+}
+
+
+.pad1 
+{
+        padding-left: 50px;
+    padding-top: 20px;
+}
+
+.publisher 
+{
+        font-size: 12px;
+    text-align: right;
+}
+
+#piechart 
+{
+    height: 168px;
+}
